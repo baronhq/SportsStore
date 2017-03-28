@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.Domain", "SportsStore.Domain\SportsStore.Domain.csproj", "{D266EC16-9523-4E74-B020-6960746DC879}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.WebUI", "SportsStore.WebUI\SportsStore.WebUI.csproj", "{7C2A0C5F-4AB5-4EF6-BBCC-99EB1BB4041A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore.UnitTests", "SportsStore.UnitTests\SportsStore.UnitTests.csproj", "{E44245EA-4721-4508-B7CF-03866991B4D0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D266EC16-9523-4E74-B020-6960746DC879} = {D266EC16-9523-4E74-B020-6960746DC879}
+		{7C2A0C5F-4AB5-4EF6-BBCC-99EB1BB4041A} = {7C2A0C5F-4AB5-4EF6-BBCC-99EB1BB4041A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
