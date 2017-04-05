@@ -1,6 +1,7 @@
 ﻿using SportsStore.Domain.Abstract;
 using SportsStore.Domain.Entities;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace SportsStore.WebUI.Controllers
@@ -27,17 +28,22 @@ namespace SportsStore.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(Product product, HttpPostedFileBase image = null)
         {
             if (ModelState.IsValid)
             {
+                if (image != null)
+                {
+                    product.ImageMimeType = image.ContentType;
+                    product.ImageData = new byte[image.ContentLength];
+                    image.InputStream.Read(product.ImageData, 0, image.ContentLength);
+                }
                 repository.SaveProduct(product);
                 TempData["message"] = string.Format("{0} has been saved", product.Name);
                 return RedirectToAction("Index");
             }
             else
             {
-                // there is something wrong with the data values
                 return View(product);
             }
         }
@@ -57,5 +63,6 @@ namespace SportsStore.WebUI.Controllers
             }
             return RedirectToAction("Index");
         }
+
     }
 }
