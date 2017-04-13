@@ -14,10 +14,14 @@ namespace UrlsAndRoutes
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name: "MyRoute",
+                url: "{controller}/{action}"
+                //,
+                //defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            //Route myRoute = new Route("{controller}/{action}", new MvcRouteHandler());
+            //routes.Add("MyRoute", myRoute);
         }
     }
 }
