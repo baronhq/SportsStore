@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Mvc.Routing.Constraints;
 using System.Web.Routing;
 
 namespace UrlsAndRoutes
@@ -11,11 +12,32 @@ namespace UrlsAndRoutes
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            //Route myRoute = routes.MapRoute(
+            //      name: "MyRoute",
+            //      url: "{controller}/{action}/{id}/{*catchall}",
+            //      defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //      );
+            //Route myRoute = routes.MapRoute(
+            //       name: "MyRoute",
+            //       url: "Home/{action}/{id}/{*catchall}",
+            //       defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+            //       namespaces: new[] { "UrlsAndRoutes.AdditionalControllers" }
+            //       );
+            //myRoute.DataTokens["UseNamespaceFallback"] = false;
+
             routes.MapRoute(
-                name: "MyRoute",
-                url: "{controller}/{action}/{id}/{*catchall}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+               name: "MyRoute1",
+               url: "{controller}/{action}/{id}/{*catchall}",
+               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+               constraints: new
+               {
+                   controller = "^H.*",
+                   action = "^Index$|^About$|^CustomVariable",
+                   httpMethod = new HttpMethodConstraint("GET"),
+                   id = new RangeRouteConstraint(10, 20)
+               },
+               namespaces: new[] { "UrlsAndRoutes.Controllers" }
+               );
             //    routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             //    routes.MapRoute(

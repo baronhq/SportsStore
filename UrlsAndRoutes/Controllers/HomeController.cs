@@ -16,11 +16,11 @@ namespace UrlsAndRoutes.Controllers
             return View("ActionName");
         }
 
-        public ActionResult CustomVariable(string catchall, string id = "default")
+        public ActionResult CustomVariable(string id = "default")
         {
             ViewBag.Controller = "Home";
             ViewBag.Action = "CustomVariable";
-            ViewBag.CustomVariable = catchall;
+            ViewBag.CustomVariable = id;
             return View();
         }
     }
