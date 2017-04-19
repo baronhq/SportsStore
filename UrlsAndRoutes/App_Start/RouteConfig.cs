@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Routing.Constraints;
 using System.Web.Routing;
+using UrlsAndRoutes.Infrastructure;
 
 namespace UrlsAndRoutes
 {
@@ -12,6 +13,14 @@ namespace UrlsAndRoutes
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapMvcAttributeRoutes();
+
+            routes.MapRoute(
+               name: "default",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+               namespaces: new[] { "UrlsAndRoutes.Controllers" }
+               );
             //Route myRoute = routes.MapRoute(
             //      name: "MyRoute",
             //      url: "{controller}/{action}/{id}/{*catchall}",
@@ -25,19 +34,30 @@ namespace UrlsAndRoutes
             //       );
             //myRoute.DataTokens["UseNamespaceFallback"] = false;
 
-            routes.MapRoute(
-               name: "MyRoute1",
-               url: "{controller}/{action}/{id}/{*catchall}",
-               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-               constraints: new
-               {
-                   controller = "^H.*",
-                   action = "^Index$|^About$|^CustomVariable",
-                   httpMethod = new HttpMethodConstraint("GET"),
-                   id = new RangeRouteConstraint(10, 20)
-               },
-               namespaces: new[] { "UrlsAndRoutes.Controllers" }
-               );
+            //  routes.MapRoute(
+            //      name: "MyRoute2",
+            //      url: "{*catchall}",
+            //      defaults: new { controller = "Home", action = "Index" },
+            //      constraints: new
+            //      {
+            //          customConstraint = new UserAgentConstraint("Chrome")
+            //      },
+            //      namespaces: new[] { "UrlsAndRoutes.Controllers" }
+            //);
+
+            //  routes.MapRoute(
+            //     name: "MyRoute1",
+            //     url: "{controller}/{action}/{id}/{*catchall}",
+            //     defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+            //     constraints: new
+            //     {
+            //         controller = "^H.*",
+            //         action = "^Index$|^About$|^CustomVariable",
+            //         httpMethod = new HttpMethodConstraint("GET"),
+            //         id = new RangeRouteConstraint(10, 20)
+            //     },
+            //     namespaces: new[] { "UrlsAndRoutes.Controllers" }
+            //     );
             //    routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             //    routes.MapRoute(
