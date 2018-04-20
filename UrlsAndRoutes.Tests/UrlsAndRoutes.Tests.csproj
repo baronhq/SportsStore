@@ -58,12 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UrlsAndRoutes\UrlsAndRoutes.csproj">
-      <Project>{E0BCBBB7-9DA8-4DB8-8AEA-EB501E69DAC1}</Project>
-      <Name>UrlsAndRoutes</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
