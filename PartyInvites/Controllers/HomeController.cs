@@ -27,7 +27,15 @@ namespace PartyInvites.Controllers
         [HttpPost]
         public ViewResult RsvpForm(GuestResponse guestResponse)
         {
-            return View("Thanks", guestResponse);
+            if (ModelState.IsValid)
+            {
+                return View("Thanks", guestResponse);
+            }
+            else
+            {
+                return View();
+            }
+
         }
     }
 }
