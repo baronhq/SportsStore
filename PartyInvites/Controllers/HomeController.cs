@@ -10,12 +10,9 @@ namespace PartyInvites.Controllers
     public class HomeController : Controller
     {
         //GET: Home
-        public ViewResult Index()
+        public string Index()
         {
-            //int hour = DateTime.Now.Hour;
-            //ViewBag.Greeting = hour < 12 ? "Good Morning" : "Good Afternoon";
-            //ViewBag.hour = hour;
-            return View();
+            return "Navigate to a URL to show an example";
         }
 
         [HttpGet]
