@@ -9,13 +9,18 @@ namespace PartyInvites.Controllers
 {
     public class HomeController : Controller
     {
-        //GET: Home
-        public ViewResult Index()
+        Product myProduct = new Product
         {
-            //int hour = DateTime.Now.Hour;
-            //ViewBag.Greeting = hour < 12 ? "Good Morning" : "Good Afternoon";
-            //ViewBag.hour = hour;
-            return View();
+            ProductID = 1,
+            Name = "Kayak",
+            Description = "A boat for one person",
+            Category = "Watersports",
+            Price = 275M
+        };
+
+        public ActionResult Index()
+        {
+            return View(myProduct);
         }
 
         [HttpGet]
