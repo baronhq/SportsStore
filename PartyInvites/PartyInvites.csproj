@@ -127,6 +127,10 @@
     <Content Include="Scripts\jquery-1.9.0.min.map" />
     <Content Include="Views\_BasicLayout1.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\NameAndPrice.cshtml" />
+    <Content Include="Views\Home\NameAndPrice1.cshtml" />
+    <Content Include="Views\Home\DemoExpression.cshtml" />
+    <Content Include="Views\Home\DemoArray.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
