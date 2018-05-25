@@ -1,41 +1,29 @@
-﻿using PartyInvites.Models;
+﻿using EssentialTools.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace PartyInvites.Controllers
+namespace EssentialTools.Controllers
 {
     public class HomeController : Controller
     {
-        //GET: Home
-        public ViewResult Index()
-        {
-            //int hour = DateTime.Now.Hour;
-            //ViewBag.Greeting = hour < 12 ? "Good Morning" : "Good Afternoon";
-            //ViewBag.hour = hour;
-            return View();
-        }
+        private Product[] products = {
+            new Product {Name = "Kayak", Category = "Watersports", Price = 275M},
+            new Product {Name = "Lifejacket", Category = "Watersports", Price = 48.95M},
+            new Product {Name = "Soccer ball", Category = "Soccer", Price = 19.50M},
+            new Product {Name = "Corner flag", Category = "Soccer", Price = 34.95M}
+        };
 
-        [HttpGet]
-        public ViewResult RsvpForm()
+        public ActionResult Index()
         {
-            return View();
-        }
 
-        [HttpPost]
-        public ViewResult RsvpForm(GuestResponse guestResponse)
-        {
-            if (ModelState.IsValid)
-            {
-                return View("Thanks", guestResponse);
-            }
-            else
-            {
-                return View();
-            }
+            LinqValueCalculator calc = new LinqValueCalculator();
+            ShoppingCart cart = new Models.ShoppingCart(calc) { Products = products };
+            decimal totalValue = cart.CalculateProductTotal();
 
+            return View(totalValue);
         }
     }
 }
