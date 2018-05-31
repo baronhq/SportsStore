@@ -10,6 +10,7 @@ namespace EssentialTools.Controllers
 {
     public class HomeController : Controller
     {
+
         private IValueCalculator calc;
 
         private Product[] products = {
