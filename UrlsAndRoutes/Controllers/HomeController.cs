@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 
 namespace UrlsAndRoutes.Controllers
 {
@@ -12,11 +13,19 @@ namespace UrlsAndRoutes.Controllers
             return View("ActionName");
         }
 
-        public ActionResult CustomVariable()
+        public ActionResult Index2()
+        {
+            ViewBag.Controller = "Home";
+            ViewBag.Action = "Index2";
+            return View("ActionName");
+        }
+
+        public ActionResult CustomVariable(string aaa, string ID = "Default")
         {
             ViewBag.Controller = "Home";
             ViewBag.Action = "CustomVariable";
-            ViewBag.CustomVariable = RouteData.Values["id"];
+            ViewBag.CustomVariable = ID ?? "no value";
+            ViewBag.catchall = aaa;
             return View();
         }
     }
