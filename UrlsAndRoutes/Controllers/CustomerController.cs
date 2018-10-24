@@ -5,7 +5,7 @@ namespace UrlsAndRoutes.Controllers
     [RoutePrefix("Users")]
     public class CustomerController : Controller
     {
-        [Route("~/Test")]  //会屏蔽基于约定的路由
+        //[Route("~/Test")]  //会屏蔽基于约定的路由
         public ActionResult Index()
         {
             ViewBag.Controller = "Customer";
@@ -13,7 +13,7 @@ namespace UrlsAndRoutes.Controllers
             return View("ActionName");
         }
 
-        [Route("Add/{user}/{id:int}")]
+        [Route("Add/{user}/{id:int}", Name = "AddRoute")]
         public string Create(string user, int id)
         {
             return string.Format("Create Method - User: {0}, ID: {1}", user, id);

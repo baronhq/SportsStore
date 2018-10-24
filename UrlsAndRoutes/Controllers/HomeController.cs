@@ -28,5 +28,18 @@ namespace UrlsAndRoutes.Controllers
             ViewBag.catchall = aaa;
             return View();
         }
+
+        public RedirectToRouteResult MyActionMethod()
+        {
+            return RedirectToRoute(new { controller = "Home", action = "Index", id = "MyID" });
+            //return RedirectToAction("index");
+        }
+
+        //public ViewResult MyActionMethod()
+        //{
+        //    string myActionUrl = ViewBag.Controller = Url.Action("index", new { id = "MyID" });
+        //    string myRouteUrl = ViewBag.Action = Url.RouteUrl(new { controller = "home", action = "index" });
+        //    return View("ActionName");
+        //}
     }
 }

@@ -10,5 +10,21 @@
 <body>
     <div>The controller is: @ViewBag.Controller</div>
     <div>The action is: @ViewBag.Action</div>
+    <div>
+        This is a URL:
+        @Html.RouteLink("click me", null, new { action = "index", controller = "customer" })
+
+        @*@Html.ActionLink("click me", "index", "customer")*@
+
+        @*@Url.Action("index", "home", new { id = "MyId" })*@
+
+        @*@Html.ActionLink("this is an outgoing URL", "index", "home", null, new { id = "myAnchorID", @class = "myCSSClass" })*@
+
+        @*@Html.ActionLink("this is an outgoing URL", "index", "home", "https", "myserver.mydomain.com", "myFragmentName", new { id = "MyId" }, new { id = "myAnchorID", @class = "myCSSClass" })
+
+            @Html.ActionLink("this is another controller", "index", "Customer")*@
+        @*@Html.ActionLink("Click me", "GetLegacyURL",
+            new { legacyURL = "~/articles/Windows_3.1_Overview.html" })*@
+    </div>
 </body>
 </html>
