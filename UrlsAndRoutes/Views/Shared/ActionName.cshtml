@@ -12,7 +12,10 @@
     <div>The action is: @ViewBag.Action</div>
     <div>
         This is a URL:
-        @Html.RouteLink("click me", null, new { action = "index", controller = "customer" })
+        @Html.ActionLink("Click me", "GetLegacyURL",
+            new { legacyURL = "~/articles/Windows_3.1_Overview.html" })
+
+        @*@Html.RouteLink("click me", null, new { action = "index", controller = "customer" })*@
 
         @*@Html.ActionLink("click me", "index", "customer")*@
 
