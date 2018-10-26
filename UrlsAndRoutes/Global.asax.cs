@@ -11,7 +11,9 @@ namespace UrlsAndRoutes
     {
         protected void Application_Start()
         {
+            //顺序不能变
             AreaRegistration.RegisterAllAreas();
+
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }

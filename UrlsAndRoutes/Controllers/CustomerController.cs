@@ -2,10 +2,11 @@
 
 namespace UrlsAndRoutes.Controllers
 {
+    [RouteArea("Services")]
     [RoutePrefix("Users")]
     public class CustomerController : Controller
     {
-        //[Route("~/Test")]  //会屏蔽基于约定的路由
+        [Route("~/Test")]  //会屏蔽基于约定的路由
         public ActionResult Index()
         {
             ViewBag.Controller = "Customer";
