@@ -13,8 +13,20 @@ namespace UrlsAndRoutes
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.RouteExistingFiles = true;
+            //设置中 修改preCondition为空
+            //< add name = "UrlRoutingModule-4.0" type = "System.Web.Routing.UrlRoutingModule" preCondition = "" />< !--managedHandler,runtimeVersionv4.0-- >
             //启用属性路由
             routes.MapMvcAttributeRoutes();
+
+            routes.IgnoreRoute("Content/{filename}.html");
+
+            routes.MapRoute("DiskFile", "Content/StaticContent.html", new
+            {
+                controller = "Customer",
+                action = "List"
+            });
+
             //routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             //routes.MapRoute("new1", "App/Do222{action}", new { controller = "Home", vara = "aa" });
