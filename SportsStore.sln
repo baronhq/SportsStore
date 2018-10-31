@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllersAndActions", "ControllersAndActions\ControllersAndActions.csproj", "{1309B9D2-11FC-4CAE-A38C-BFF71290F125}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllersAndActions.Tests", "ControllersAndActions.Tests\ControllersAndActions.Tests.csproj", "{8A104E01-61B5-496D-9663-5A2D31E27E67}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1309B9D2-11FC-4CAE-A38C-BFF71290F125} = {1309B9D2-11FC-4CAE-A38C-BFF71290F125}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
