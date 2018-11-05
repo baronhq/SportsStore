@@ -8,7 +8,7 @@ using System.Web.Mvc;
 namespace Filters.Controllers
 {
     //[Authorize]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         //[CustomAuth(true)]
         [Authorize]
@@ -20,6 +20,13 @@ namespace Filters.Controllers
         public string Index2()
         {
             return "This is the Index2 action on the Home controller";
+        }
+
+        [GoogleAuth]
+        [Authorize(Users = "bob@google.com")]
+        public string List()
+        {
+            return "This is the List action on the Home controller";
         }
     }
 }

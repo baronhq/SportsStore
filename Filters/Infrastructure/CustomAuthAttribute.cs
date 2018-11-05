@@ -29,7 +29,7 @@ namespace Filters.Infrastructure
         {
             if (httpContext.Request.IsAuthenticated)
             {
-                if (controller == "Home" && action == "Index")
+                if (controller.ToLower() == "home" && (action.ToLower() == "list" || action.ToLower() == "index"))
                 {
                     return true;
                 }
