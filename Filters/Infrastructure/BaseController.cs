@@ -6,7 +6,8 @@ using System.Web.Mvc;
 
 namespace Filters.Infrastructure
 {
-    [CustomAuth(true)]
+    //[CustomAuth(true)]
+    [RangeException]
     public class BaseController : Controller
     {
     }
