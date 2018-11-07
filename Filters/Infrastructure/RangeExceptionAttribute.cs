@@ -21,6 +21,7 @@ namespace Filters.Infrastructure
                     ViewName = "RangeError",
                     ViewData = new ViewDataDictionary<int>(val)
                 };
+                //filterContext.Result = new RedirectResult("~/Content/RangeErrorPage.html");
 
                 filterContext.ExceptionHandled = true;
             }

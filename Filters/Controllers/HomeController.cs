@@ -29,6 +29,7 @@ namespace Filters.Controllers
             return "This is the List action on the Home controller";
         }
 
+        [HandleError(ExceptionType = typeof(ArgumentOutOfRangeException), View = "RangeError")]
         public string RangeTest(int id)
         {
             if (id > 100)
