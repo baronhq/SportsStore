@@ -7,22 +7,20 @@ using System.Web.Mvc;
 
 namespace Filters.Infrastructure
 {
-    //[CustomAuth(true)]
-    //[RangeException]
-    public class BaseController : Controller
+    public class ProfileAllAttribute : ActionFilterAttribute
     {
         private Stopwatch timer;
-
-        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             timer = Stopwatch.StartNew();
         }
 
-        protected override void OnResultExecuted(ResultExecutedContext filterContext)
+        public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
+            //System.Threading.Thread.Sleep(1000);
             timer.Stop();
             filterContext.HttpContext.Response.Write(
-                    string.Format("<div>Total elapsed time: {0}</div>",
+                    string.Format("<div>Total elapsed time: {0:F6}</div>",
                         timer.Elapsed.TotalSeconds));
         }
     }

@@ -27,9 +27,13 @@ namespace Filters.Infrastructure
 
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
+            if (controller.ToLower() == "account" && action.ToLower() == "login")
+            {
+                return true;
+            }
             if (httpContext.Request.IsAuthenticated)
             {
-                if (controller.ToLower() == "home" && (action.ToLower() == "list" || action.ToLower() == "index"))
+                if ((controller.ToLower() == "home" || controller.ToLower() == "customer") && (action.ToLower() == "list" || action.ToLower() == "index"))
                 {
                     return true;
                 }

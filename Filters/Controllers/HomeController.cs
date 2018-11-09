@@ -1,6 +1,7 @@
 ﻿using Filters.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,8 +9,9 @@ using System.Web.Mvc;
 namespace Filters.Controllers
 {
     //[Authorize]
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
+
         //[CustomAuth(true)]
         [Authorize]
         public string Index()
@@ -40,6 +42,15 @@ namespace Filters.Controllers
             {
                 throw new ArgumentOutOfRangeException("id", id, "");
             }
+        }
+
+        //[CustomAction]
+        //[ProfileAction]
+        //[ProfileResult]
+        //[ProfileAll]
+        public string FilterTest()
+        {
+            return "This is the FilterTest action";
         }
     }
 }
