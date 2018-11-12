@@ -24,6 +24,7 @@ namespace Filters.Controllers
             return "This is the Index2 action on the Home controller";
         }
 
+        //[CustomOverrideAuthFilters]
         [GoogleAuth]
         [Authorize(Users = "bob@google.com")]
         public string List()
@@ -31,7 +32,8 @@ namespace Filters.Controllers
             return "This is the List action on the Home controller";
         }
 
-        [HandleError(ExceptionType = typeof(ArgumentOutOfRangeException), View = "RangeError")]
+        //[HandleError(ExceptionType = typeof(ArgumentOutOfRangeException), View = "RangeError")]
+        //[RangeException]
         public string RangeTest(int id)
         {
             if (id > 100)

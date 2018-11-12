@@ -8,6 +8,7 @@ using System.Web.Security;
 
 namespace Filters.Controllers
 {
+    [CustomOverrideAuthFilters]
     public class AccountController : BaseController
     {
         public ActionResult Login()

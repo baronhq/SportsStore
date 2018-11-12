@@ -9,8 +9,9 @@ namespace Filters
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new CustomExceptionAttribute());
             filters.Add(new ProfileAllAttribute());
-            //filters.Add(new CustomAuthAttribute(true));
+            filters.Add(new CustomAuthAttribute(true));
         }
     }
 }

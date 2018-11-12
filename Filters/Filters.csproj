@@ -106,6 +106,10 @@
     <Compile Include="Infrastructure\BaseController.cs" />
     <Compile Include="Infrastructure\CustomActionAttribute.cs" />
     <Compile Include="Infrastructure\CustomAuthAttribute.cs" />
+    <Compile Include="Infrastructure\CustomExceptionAttribute.cs" />
+    <Compile Include="Infrastructure\CustomOverrideActionFiltersAttribute.cs" />
+    <Compile Include="Infrastructure\CustomOverrideAuthFiltersAttribute.cs" />
+    <Compile Include="Infrastructure\CustomOverrideExceptionFiltersAttribute.cs" />
     <Compile Include="Infrastructure\GoogleAuthAttribute.cs" />
     <Compile Include="Infrastructure\ProfileActionAttribute.cs" />
     <Compile Include="Infrastructure\ProfileAllAttribute.cs" />
@@ -119,6 +123,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\Login.cshtml" />
     <Content Include="Views\Shared\RangeError.cshtml" />
+    <Content Include="Views\Shared\CustomError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
