@@ -20,9 +20,9 @@ namespace WorkingWithRazor.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult Time()
+        public ActionResult Time(DateTime time)
         {
-            return PartialView(DateTime.Now);
+            return PartialView(time);
         }
     }
 }
