@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "CreatePerson";
     Layout = "/Views/Shared/_Layout.cshtml";
+    Html.EnableClientValidation(false);
 }
 <h2>CreatePerson</h2>
 @*@using (Html.BeginRouteForm("FormRoute", new { }, FormMethod.Post,
