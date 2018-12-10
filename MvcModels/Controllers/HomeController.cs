@@ -24,35 +24,39 @@ namespace MvcModels.Controllers
             return View(dataItem);
         }
 
-        //public ActionResult CreatePerson()
-        //{
-        //    return View(new Person());
-        //}
+        public ActionResult CreatePerson()
+        {
+            return View(new Person());
+        }
 
-        //[HttpPost]
-        //public ActionResult CreatePerson(Person model)
-        //{
-        //    return View("Index", model);
-        //}
+        [HttpPost]
+        public ActionResult CreatePerson(Person model)
+        {
+            return View("Index", model);
+        }
 
-        //public ActionResult DisplaySummary(
-        //    [Bind(Prefix = "HomeAddress", Exclude = "Country")]AddressSummary summary)
-        //{
-        //    return View(summary);
-        //}
+        public ActionResult DisplaySummary([Bind(Prefix = "HomeAddress", Exclude = "Country")]AddressSummary summary)
+        {
+            return View(summary);
+        }
 
-        //public ActionResult Names(IList<string> names)
-        //{
-        //    names = names ?? new List<string>();
-        //    return View(names);
-        //}
+        public ActionResult Names(IList<string> names)
+        {
+            names = names ?? new List<string>();
+            return View(names);
+        }
+        public ActionResult Address(IList<AddressSummary> names)
+        {
+            names = names ?? new List<AddressSummary>();
+            return View(names);
+        }
 
-        //public ActionResult Address()
-        //{
-        //    IList<AddressSummary> addresses = new List<AddressSummary>();
-        //    UpdateModel(addresses);
-        //    return View(addresses);
-        //}
+        public ActionResult Address(FormCollection formData)
+        {
+            IList<AddressSummary> addresses = new List<AddressSummary>();
+            UpdateModel(addresses, formData);
+            return View(addresses);
+        }
 
     }
 }

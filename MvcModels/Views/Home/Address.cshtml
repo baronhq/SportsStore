@@ -5,9 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Addresses</h2>
-@if (Model.Count() == 0) {
-    using (Html.BeginForm()) {
-        for (int i = 0; i < 3; i++) {
+@if (Model.Count() == 0)
+{
+    using (Html.BeginForm())
+    {
+        for (int i = 0; i < 3; i++)
+        {
             <fieldset>
                 <legend>Address @(i + 1)</legend>
                 <div><label>City:</label>@Html.Editor("[" + i + "].City")</div>
@@ -16,8 +19,11 @@
         }
         <button type="submit">Submit</button>
     }
-} else {
-    foreach (AddressSummary str in Model) {
+}
+else
+{
+    foreach (AddressSummary str in Model)
+    {
         <p>@str.City, @str.Country</p>
     }
     @Html.ActionLink("Back", "Address");

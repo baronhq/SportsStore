@@ -1,11 +1,14 @@
-﻿//using System.Web.Mvc;
+﻿using System.Web.Mvc;
 //using MvcModels.Infrastructure;
 
-//namespace MvcModels.Models {
+namespace MvcModels.Models
+{
 
-//    [ModelBinder(typeof(AddressSummaryBinder))]
-//    public class AddressSummary {
-//        public string City { get; set; }
-//        public string Country { get; set; }
-//    }
-//}
+    //[ModelBinder(typeof(AddressSummaryBinder))]
+    //[Bind(Include = "City")]
+    public class AddressSummary
+    {
+        public string City { get; set; }
+        public string Country { get; set; }
+    }
+}
