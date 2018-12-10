@@ -5,11 +5,12 @@
     Layout = "/Views/Shared/_Layout.cshtml";
     AjaxOptions ajaxOpts = new AjaxOptions
     {
-        UpdateTargetId = "tableBody",
-        Url = Url.Action("GetPeopleData"),
+        //UpdateTargetId = "tableBody",
+        //Url = Url.Action("GetPeopleData"),
         LoadingElementId = "loading",
         LoadingElementDuration = 1000,
-        Confirm = "Do you wish to request new data?"
+        //Confirm = "Do you wish to request new data?",
+        OnSuccess = "processData"
     };
 }
 <script type="text/javascript">
@@ -51,7 +52,7 @@
                 new AjaxOptions
                 {
                     UpdateTargetId = "tableBody",
-                    Url = Url.Action("GetPeopleDataJson", new { selectedRole = role }),
+                    Url = Url.Action("GetPeopleData", new { selectedRole = role }),
                     OnSuccess = "processData"
                 })
         </div>
