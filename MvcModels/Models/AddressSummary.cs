@@ -1,10 +1,10 @@
 ﻿using System.Web.Mvc;
-//using MvcModels.Infrastructure;
+using MvcModels.Infrastructure;
 
 namespace MvcModels.Models
 {
 
-    //[ModelBinder(typeof(AddressSummaryBinder))]
+    [ModelBinder(typeof(AddressSummaryBinder))]
     //[Bind(Include = "City")]
     public class AddressSummary
     {

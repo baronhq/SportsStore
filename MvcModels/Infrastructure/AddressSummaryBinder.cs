@@ -1,11 +1,14 @@
 ﻿using MvcModels.Models;
 using System.Web.Mvc;
 
-namespace MvcModels.Infrastructure {
-    public class AddressSummaryBinder : IModelBinder {
+namespace MvcModels.Infrastructure
+{
+    public class AddressSummaryBinder : IModelBinder
+    {
 
         public object BindModel(ControllerContext controllerContext,
-                ModelBindingContext bindingContext) {
+                ModelBindingContext bindingContext)
+        {
 
             AddressSummary model = (AddressSummary)bindingContext.Model
                 ?? new AddressSummary();
@@ -14,13 +17,17 @@ namespace MvcModels.Infrastructure {
             return model;
         }
 
-        private string GetValue(ModelBindingContext context, string name) {
+        private string GetValue(ModelBindingContext context, string name)
+        {
             name = (context.ModelName == "" ? "" : context.ModelName + ".") + name;
 
             ValueProviderResult result = context.ValueProvider.GetValue(name);
-            if (result == null || result.AttemptedValue == "") {
+            if (result == null || result.AttemptedValue == "")
+            {
                 return "<Not Specified>";
-            } else {
+            }
+            else
+            {
                 return (string)result.AttemptedValue;
             }
         }
