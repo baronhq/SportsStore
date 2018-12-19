@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using System.Collections.Generic;
 
 namespace ModelValidation.Models
 {
@@ -18,5 +19,15 @@ namespace ModelValidation.Models
         //[Range(typeof(bool), "true", "true", ErrorMessage = "You must accept ther terms.")]
         [MustBeTrue(ErrorMessage = "You must accept ther terms1.")]
         public bool TermsAccepted { get; set; }
+
+        //public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        //{
+        //    List<ValidationResult> errors = new List<ValidationResult>();
+        //    if (string.IsNullOrEmpty(ClientName))
+        //    {
+        //        errors.Add(new ValidationResult("Please enter yourname"));
+        //    }
+        //    return errors;
+        //}
     }
 }
